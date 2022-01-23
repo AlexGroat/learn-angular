@@ -1,4 +1,11 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add server</button>
+<button class="btn btn-primary"
+ [disabled]="!allowNewServer"
+ (click)="onCreateServer()">Add server</button>
+ <!-- <p [innerText]="allowNewServer"></p> -->
+ <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
 
+<!-- out put something in your template, use string interpolation -->
+<!-- change property, element, directives, component use property binding -->
+<!-- Do not mix string interpolation and property binding -->
