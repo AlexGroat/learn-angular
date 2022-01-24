@@ -12,5 +12,5 @@ import { Component } from '@angular/core';
 //`] can use the styles section to write css here in the component, cant combine style urls and styles, must choose one
 })
 export class AppComponent {
-  
+  userName: '';
 }
