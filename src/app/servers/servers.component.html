@@ -19,8 +19,8 @@ class="form-control"
   <p>No server was created!</p>
 </ng-template>
 <!-- Else condition for server created -->
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+
 
 <!-- out put something in your template, use string interpolation -->
 <!-- change property, element, directives, component use property binding -->
