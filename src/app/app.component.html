@@ -3,23 +3,46 @@
     <div class="col-xs-12">
       <h3>Im in the app component</h3>
       <hr />
-      <app-servers></app-servers>  <!-- typically create elements for your components -->
+      <app-servers></app-servers>
+      <!-- typically create elements for your components -->
       <!-- <div app-servers></div> placing the selector in square brackets allows it
       to be placed in an element-->
       <!-- <div class="app-servers"></div> making app servers a class -->
-      <hr>
+      <hr />
       <app-warning></app-warning>
-      <hr>
+      <hr />
       <app-success></app-success>
     </div>
   </div>
 </div>
 
 <label>Username</label>
-<input type="text" class="form-control" [(ngModel)]="userName">
-<p>{{userName}}</p>
+<input type="text" class="form-control" [(ngModel)]="userName" />
+<p>{{ userName }}</p>
 <button
- class="btn btn-primary"
+  class="btn btn-primary"
   [disabled]="userName === ''"
-  (click)="userName = ''">Reset User</button>
-  <!-- Two way databinding solution/ example -->
+  (click)="userName = ''"
+>
+  Reset User
+</button>
+<!-- Two way databinding solution/ example -->
+
+<div>
+  <!-- <button class="btn btn-primary"
+  (click)="password = !password">
+  Display details</button> -->
+  <button class="btn btn-primary"
+  (click)="onToggleDetails()">
+  Display details</button>
+  <p *ngIf="password">Secret password is tuna</p>
+  <div 
+  *ngFor="let logItem of log"
+  [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : 'transparent'}"
+  [ngClass]="{'white-text': logItem >= 5}"
+  >{{ logItem }}</div>
+</div>
+
+<!-- toggling data  -->
+<!-- line 41 sets the background color to blue if the log item is equal to or greater than 5
+line 42 also applies the white text css in app component css to items greater or equal to 5 -->

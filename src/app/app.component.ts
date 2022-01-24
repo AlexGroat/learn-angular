@@ -13,4 +13,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   userName: '';
+  password = false;
+  log = []
+
+ onToggleDetails() {
+  this.password = !this.password;
+  this.log.push(this.log.length + 1);
+ }
 }
